@@ -40,8 +40,8 @@
  *  Add logic to draw different shapes and other desired objects
  */
 module DRAW #(
-    parameter X_BIT_SIZE = 10,
-    parameter Y_BIT_SIZE = 9
+    parameter X_BIT_SIZE = 10, // Used to define the size of the screen in the x direction
+    parameter Y_BIT_SIZE = 9   // Used to define the size of the screen in the y direction
 )(
     input clk,
     input [X_BIT_SIZE-1:0] x,
@@ -182,14 +182,15 @@ module DRAW #(
 endmodule
 
 /**
- *
+ * Module is used to draw a letter on a screen. The letter has a size of 8x16 pixels. 
+ * Change the parameters to suit your needs when you instantiate the module.
  */
 module ASCII_LETTER #(
-    parameter COLOR = `WHITE,
-    parameter X_OFFSET = 100,
-    parameter Y_OFFSET = 100,
-    parameter X_BIT_SIZE = 10,
-    parameter Y_BIT_SIZE = 9
+    parameter COLOR = `WHITE,  // The color of the letter
+    parameter X_OFFSET = 100,  // X location for the top left corner of the letter
+    parameter Y_OFFSET = 100,  // Y location for the top left corner of the letter
+    parameter X_BIT_SIZE = 10, // Size of the x counter
+    parameter Y_BIT_SIZE = 9   // Size of the Y counter
 )(
     input draw_en, clk,
     input [6:0] letter,

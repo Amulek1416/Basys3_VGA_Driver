@@ -30,6 +30,8 @@ module top(
     wire [9:0] x;
     wire [8:0] y;
     
+    // This handles the timing for the virticle and horizontal sync as well 
+    // as keeping track of what pixel is being drawn at a given time.
     VGA_DISPLAY U0(
         .clk(clk),
         .reset(btnC),
@@ -39,6 +41,7 @@ module top(
         .y(y)
     );
     
+    // This module will draw things using the current pixel being drawn
     DRAW #(
         .X_BIT_SIZE(11),
         .Y_BIT_SIZE(10)
